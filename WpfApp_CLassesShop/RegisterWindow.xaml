@@ -1,0 +1,147 @@
+﻿<Window x:Class="WpfApp_CLassesShop.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_CLassesShop"
+        mc:Ignorable="d"
+        Title="Đăng ký tài khoản" Height="680" Width="420"
+        WindowStartupLocation="CenterScreen" Background="#F4F6F9" ResizeMode="NoResize" FontFamily="Segoe UI">
+
+    <Window.Resources>
+        <Style x:Key="ModernTextBox" TargetType="TextBox">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#F8FAFC"/>
+            <Setter Property="BorderBrush" Value="#E2E8F0"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="Foreground" Value="#334155"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="8">
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#CBD5E1"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="#3498DB"/>
+                                <Setter Property="Background" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ModernPasswordBox" TargetType="PasswordBox">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#F8FAFC"/>
+            <Setter Property="BorderBrush" Value="#E2E8F0"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="Foreground" Value="#334155"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="8">
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#CBD5E1"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="#3498DB"/>
+                                <Setter Property="Background" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="Background" Value="#2ECC71"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#27AE60"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#1E8449"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Border Background="White" CornerRadius="16" Margin="25" Padding="30">
+            <Border.Effect>
+                <DropShadowEffect Color="#B0BEC5" BlurRadius="20" ShadowDepth="4" Opacity="0.3"/>
+            </Border.Effect>
+
+            <StackPanel Margin="0,10,0,0">
+                <TextBlock Text="TẠO TÀI KHOẢN" FontSize="24" FontWeight="Bold" Foreground="#2C3E50" HorizontalAlignment="Center" Margin="0,0,0,25"/>
+
+                <TextBlock Text="Họ và tên" Foreground="#64748B" Margin="2,0,0,5" FontWeight="SemiBold"/>
+                <TextBox x:Name="txtFullName" Style="{StaticResource ModernTextBox}" Margin="0,0,0,12"/>
+
+                <TextBlock Text="Số điện thoại" Foreground="#64748B" Margin="2,0,0,5" FontWeight="SemiBold"/>
+                <TextBox x:Name="txtPhone" Style="{StaticResource ModernTextBox}" Margin="0,0,0,12"/>
+
+                <TextBlock Text="Email" Foreground="#64748B" Margin="2,0,0,5" FontWeight="SemiBold"/>
+                <TextBox x:Name="txtEmail" Style="{StaticResource ModernTextBox}" Margin="0,0,0,12"/>
+
+                <TextBlock Text="Mật khẩu" Foreground="#64748B" Margin="2,0,0,5" FontWeight="SemiBold"/>
+                <PasswordBox x:Name="txtPassword" Style="{StaticResource ModernPasswordBox}" Margin="0,0,0,12"/>
+
+                <TextBlock Text="Xác nhận mật khẩu" Foreground="#64748B" Margin="2,0,0,5" FontWeight="SemiBold"/>
+                <PasswordBox x:Name="txtConfirmPassword" Style="{StaticResource ModernPasswordBox}" Margin="0,0,0,25"/>
+
+                <Button x:Name="btnRegister" Content="ĐĂNG KÝ" Style="{StaticResource ModernButton}" Click="btnRegister_Click"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                    <TextBlock Text="Đã có tài khoản? " Foreground="#7F8C8D" FontSize="14"/>
+                    <TextBlock x:Name="txtBackToLogin" Text="Đăng nhập ngay" Foreground="#3498DB" FontWeight="Bold" FontSize="14" Cursor="Hand" MouseDown="txtBackToLogin_MouseDown">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="TextDecorations" Value="Underline"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

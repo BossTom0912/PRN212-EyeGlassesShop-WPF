@@ -1,0 +1,15 @@
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\bin\Debug\net8.0\BLL.deps.json
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\bin\Debug\net8.0\BLL.dll
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\bin\Debug\net8.0\BLL.pdb
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\bin\Debug\net8.0\DAL.dll
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\bin\Debug\net8.0\DAL.pdb
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\BLL.csproj.AssemblyReference.cache
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\BLL.AssemblyInfoInputs.cache
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\BLL.AssemblyInfo.cs
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\BLL.csproj.CoreCompileInputs.cache
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\BLL.csproj.Up2Date
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\BLL.dll
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\refint\BLL.dll
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\BLL.pdb
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\ref\BLL.dll

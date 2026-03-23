@@ -1,0 +1,14 @@
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\bin\Debug\net8.0\DAL.deps.json
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\bin\Debug\net8.0\DAL.runtimeconfig.json
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\bin\Debug\net8.0\DAL.dll
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\bin\Debug\net8.0\DAL.pdb
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\DAL.dll
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\refint\DAL.dll
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\DAL.pdb
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\ref\DAL.dll

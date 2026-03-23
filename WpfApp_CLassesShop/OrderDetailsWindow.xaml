@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp_CLassesShop.OrderDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_CLassesShop"
+        mc:Ignorable="d"
+        Title="OrderDetailsWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15" Background="#F4F6F9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="CHI TIẾT HÓA ĐƠN" FontSize="20" FontWeight="Bold" 
+                   Foreground="#E67E22" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+
+        <DataGrid x:Name="dgOrderDetails" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" 
+                  HeadersVisibility="Column" Background="White" RowHeight="35" FontSize="14"
+                  AlternatingRowBackground="#F2F4F4">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Tên Kính" Binding="{Binding ProductNameSnapshot}" Width="*"/>
+                <DataGridTextColumn Header="Màu Sắc" Binding="{Binding ColorSnapshot}" Width="100"/>
+                <DataGridTextColumn Header="Đơn giá" Binding="{Binding UnitPrice, StringFormat={}{0:N0} đ}" Width="120"/>
+                <DataGridTextColumn Header="Số lượng" Binding="{Binding Quantity}" Width="80"/>
+                <DataGridTextColumn Header="Thành tiền" Binding="{Binding SubTotal, StringFormat={}{0:N0} đ}" Width="150" FontWeight="Bold" Foreground="#D35400"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="btnReOrder" Grid.Row="2" Content="🛒 MUA LẠI ĐƠN NÀY" 
+                Height="40" Width="200" HorizontalAlignment="Right" Margin="0,15,0,0"
+                Background="#27AE60" Foreground="White" FontSize="16" FontWeight="Bold" Cursor="Hand"
+                Click="btnReOrder_Click"/>
+    </Grid>
+</Window>
