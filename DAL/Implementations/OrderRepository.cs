@@ -12,7 +12,7 @@ namespace DAL.Implementations
 {
     public class OrderRepository : IOrderRepository
     {
-        public void Checkout(int accountId, List<CartItem> cartItems, string receiverName, string phone, string shippingAddress, string orderCode)
+        public void Checkout(int accountId, List<CartItem> cartItems, string receiverName, string phone, string shippingAddress, string orderCode, string paymentMethod)
         {
             using (var context = new GlassesShopContext())
             {
@@ -31,7 +31,7 @@ namespace DAL.Implementations
                             ShippingAddress = shippingAddress, 
                             OrderDate = DateTime.UtcNow,
                             Status = "PENDING",
-                            PaymentMethod = "COD",
+                            PaymentMethod = paymentMethod,
                             TotalAmount = totalAmount,
                             CreatedAt = DateTime.UtcNow,
                             UpdatedAt = DateTime.UtcNow

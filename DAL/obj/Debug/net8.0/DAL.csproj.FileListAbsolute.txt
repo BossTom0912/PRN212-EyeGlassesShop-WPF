@@ -12,3 +12,4 @@ D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\refint\DA
 D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\DAL.pdb
 D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
 D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\ref\DAL.dll
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\DAL\obj\Debug\net8.0\DAL.sourcelink.json

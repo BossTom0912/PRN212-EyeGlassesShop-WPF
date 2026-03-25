@@ -68,7 +68,7 @@ namespace WpfApp_CLassesShop
 
                     string orderCode = "ORD" + DateTime.UtcNow.ToString("yyyyMMddHHmmss");
 
-                    orderService.PlaceOrder((int)Session.Session.LoggedInAccount.Id, name, phone, address, orderCode);
+                    orderService.PlaceOrder((int)Session.Session.LoggedInAccount.Id, name, phone, address, orderCode, "COD");
 
                     var items = dgCart.ItemsSource as IEnumerable<BLL.Services.CartItemDisplay>;
                     decimal totalAmount = items != null ? items.Sum(x => x.TotalPrice) : 100000;
@@ -91,7 +91,7 @@ namespace WpfApp_CLassesShop
 
                     if (result == MessageBoxResult.Yes)
                     {
-                        orderService.UpdateOrderStatus(orderCode, "PAID");
+                        orderService.UpdateOrderStatus(orderCode, "APPROVED");
 
                         MessageBox.Show("🎉 Tuyệt vời! Cảm ơn bạn đã thanh toán. Đơn hàng sẽ sớm được xử lý và giao đến bạn!",
                                          "Thanh toán thành công", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -109,7 +109,15 @@ namespace WpfApp_CLassesShop
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi thanh toán: {ex.Message}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                string errorMessage = ex.Message;
+
+                // Móc lỗi sâu bên trong (Inner Exception) ra để xem Database đang chửi gì
+                if (ex.InnerException != null)
+                {
+                    errorMessage += "\n\nCHI TIẾT TỪ DATABASE:\n" + ex.InnerException.Message;
+                }
+
+                MessageBox.Show($"Lỗi thanh toán: {errorMessage}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

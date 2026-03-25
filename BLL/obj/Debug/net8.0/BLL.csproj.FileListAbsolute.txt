@@ -13,3 +13,4 @@ D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\BLL.dll
 D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\refint\BLL.dll
 D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\BLL.pdb
 D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\ref\BLL.dll
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\BLL\obj\Debug\net8.0\BLL.sourcelink.json
