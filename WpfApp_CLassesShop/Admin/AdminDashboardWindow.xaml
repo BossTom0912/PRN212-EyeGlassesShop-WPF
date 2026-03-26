@@ -1,0 +1,81 @@
+﻿<Window x:Class="WpfApp_CLassesShop.Admin.AdminDashboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_CLassesShop.Admin"
+        mc:Ignorable="d"
+        Title="Trung Tâm Quản Trị" Height="500" Width="450"
+        WindowStartupLocation="CenterScreen" Background="#F4F6F9" ResizeMode="NoResize" FontFamily="Segoe UI">
+
+    <Window.Resources>
+        <Style x:Key="AdminMenuButton" TargetType="Button">
+            <Setter Property="Background" Value="#2980B9"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#1F618D"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#154360"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LogoutButton" TargetType="Button" BasedOn="{StaticResource AdminMenuButton}">
+            <Setter Property="Background" Value="#E74C3C"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#C0392B"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#922B21"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Border Background="White" CornerRadius="16" Margin="30" Padding="30" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect Color="#B0BEC5" BlurRadius="20" ShadowDepth="4" Opacity="0.3"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <TextBlock Text=" TRUNG TÂM QUẢN TRỊ" FontSize="22" FontWeight="ExtraBold" Foreground="#2C3E50" HorizontalAlignment="Center" Margin="0,0,0,25"/>
+
+                <Button Content="  1. Quản lý Người dùng" Style="{StaticResource AdminMenuButton}" Click="BtnManageUsers_Click"/>
+                <Button Content="  2. Quản lý Sản phẩm" Style="{StaticResource AdminMenuButton}" Click="BtnManageProducts_Click"/>
+                <Button Content="  3. Quản lý Biến thể (Variant)" Style="{StaticResource AdminMenuButton}" Click="BtnManageVariants_Click"/>
+
+                <Separator Margin="0,20,0,10" Background="#E2E8F0"/>
+
+                <Button Content="🚪  Đăng xuất" Style="{StaticResource LogoutButton}" Click="BtnLogout_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
