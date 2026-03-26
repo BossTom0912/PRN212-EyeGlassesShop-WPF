@@ -21,7 +21,7 @@ namespace BLL.Services
             _cartRepo = new CartRepository();
         }
 
-        public void PlaceOrder(int accountId, string receiverName, string phone, string shippingAddress, string orderCode)
+        public void PlaceOrder(int accountId, string receiverName, string phone, string shippingAddress, string orderCode, string paymentMethod)
         {
             var cart = _cartRepo.GetCartByAccountId(accountId);
             if (cart == null) throw new Exception("Không tìm thấy giỏ hàng.");
@@ -32,7 +32,7 @@ namespace BLL.Services
                 throw new Exception("Giỏ hàng của bạn đang trống! Hãy chọn món đồ yêu thích trước nhé.");
             }
 
-            _orderRepo.Checkout(accountId, cartItems, receiverName, phone, shippingAddress, orderCode);
+            _orderRepo.Checkout(accountId, cartItems, receiverName, phone, shippingAddress, orderCode, paymentMethod);
         }
 
         public void UpdateOrderStatus(string orderCode, string status)

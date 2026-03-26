@@ -88,3 +88,4 @@ D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\WpfApp_CLassesShop\obj\Debug\n
 D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\WpfApp_CLassesShop\obj\Debug\net8.0-windows\WpfApp_CLassesShop.pdb
 D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\WpfApp_CLassesShop\obj\Debug\net8.0-windows\WpfApp_CLassesShop.genruntimeconfig.cache
 D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\WpfApp_CLassesShop\obj\Debug\net8.0-windows\ref\WpfApp_CLassesShop.dll
+D:\Ki8-FPT\PRN212_new\SE1935\CodeNhom\GlassesShop\WpfApp_CLassesShop\obj\Debug\net8.0-windows\WpfApp_CLassesShop.sourcelink.json
