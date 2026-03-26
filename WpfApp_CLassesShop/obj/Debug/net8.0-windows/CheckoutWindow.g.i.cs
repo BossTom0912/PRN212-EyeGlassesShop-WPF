@@ -93,7 +93,7 @@ namespace WpfApp_CLassesShop {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfApp_CLassesShop;component/checkoutwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfApp_CLassesShop;V1.0.0.0;component/checkoutwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CheckoutWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

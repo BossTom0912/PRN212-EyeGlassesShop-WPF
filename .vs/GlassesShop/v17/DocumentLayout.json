@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\wpfapp_classesshop\\cartwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|solutionrelative:wpfapp_classesshop\\cartwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\wpfapp_classesshop\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|solutionrelative:wpfapp_classesshop\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6BB7D9FF-6A5D-4041-B826-D9D53468028E}|DAL\\DAL.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\dal\\dbcontext\\glassesshopcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6BB7D9FF-6A5D-4041-B826-D9D53468028E}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontext\\glassesshopcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\wpfapp_classesshop\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|solutionrelative:wpfapp_classesshop\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\wpfapp_classesshop\\cartwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|solutionrelative:wpfapp_classesshop\\cartwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C431D4FC-445F-4991-A976-52F5891A1B99}|BLL\\BLL.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\bll\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,10 +47,6 @@
       "RelativeMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|solutionrelative:wpfapp_classesshop\\checkoutwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\wpfapp_classesshop\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|solutionrelative:wpfapp_classesshop\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\wpfapp_classesshop\\orderhistorywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|solutionrelative:wpfapp_classesshop\\orderhistorywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -61,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\wpfapp_classesshop\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|solutionrelative:wpfapp_classesshop\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\wpfapp_classesshop\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|solutionrelative:wpfapp_classesshop\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\wpfapp_classesshop\\registerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -119,10 +119,6 @@
       "RelativeMoniker": "D:0:0:{6BB7D9FF-6A5D-4041-B826-D9D53468028E}|DAL\\DAL.csproj|solutionrelative:dal\\implementations\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C431D4FC-445F-4991-A976-52F5891A1B99}|BLL\\BLL.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\bll\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C431D4FC-445F-4991-A976-52F5891A1B99}|BLL\\BLL.csproj|solutionrelative:bll\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|d:\\ki8-fpt\\prn212_new\\se1935\\codenhom\\glassesshop\\wpfapp_classesshop\\registerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8EDC6366-2F98-4E42-B58B-83FFD8164F12}|WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj|solutionrelative:wpfapp_classesshop\\registerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -138,7 +134,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Bookmark",
@@ -202,7 +198,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp_CLassesShop\\LoginWindow.xaml",
+              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\LoginWindow.xaml",
+              "RelativeToolTip": "WpfApp_CLassesShop\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-22T06:31:33.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GlassesShopContext.cs",
+              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\DBContext\\GlassesShopContext.cs",
+              "RelativeDocumentMoniker": "DAL\\DBContext\\GlassesShopContext.cs",
+              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\DBContext\\GlassesShopContext.cs",
+              "RelativeToolTip": "DAL\\DBContext\\GlassesShopContext.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAQwGUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T07:05:46.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\CartWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp_CLassesShop\\CartWindow.xaml.cs",
+              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\CartWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp_CLassesShop\\CartWindow.xaml.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAkwGwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T16:19:47.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "CartWindow.xaml",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\CartWindow.xaml",
               "RelativeDocumentMoniker": "WpfApp_CLassesShop\\CartWindow.xaml",
@@ -214,55 +248,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CartWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\CartWindow.xaml.cs",
-              "RelativeDocumentMoniker": "WpfApp_CLassesShop\\CartWindow.xaml.cs",
-              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\CartWindow.xaml.cs",
-              "RelativeToolTip": "WpfApp_CLassesShop\\CartWindow.xaml.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAlwFwAAAAVAAAAAAAAAA==",
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp_CLassesShop\\LoginWindow.xaml.cs",
+              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp_CLassesShop\\LoginWindow.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T16:19:47.175Z",
+              "WhenOpened": "2026-03-22T06:55:13.726Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\BLL\\Services\\OrderService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\OrderService.cs",
-              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\BLL\\Services\\OrderService.cs",
-              "RelativeToolTip": "BLL\\Services\\OrderService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCIAAAB0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T04:21:10.193Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OrderRepository.cs",
-              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\Implementations\\OrderRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Implementations\\OrderRepository.cs",
-              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\Implementations\\OrderRepository.cs",
-              "RelativeToolTip": "DAL\\Implementations\\OrderRepository.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAmwAwAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T04:06:09.65Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IOrderRepository.cs",
-              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\Interfaces\\IOrderRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Interfaces\\IOrderRepository.cs",
-              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\Interfaces\\IOrderRepository.cs",
-              "RelativeToolTip": "DAL\\Interfaces\\IOrderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAACgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T04:05:45.265Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "CheckoutWindow.xaml.cs",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\CheckoutWindow.xaml.cs",
               "RelativeDocumentMoniker": "WpfApp_CLassesShop\\CheckoutWindow.xaml.cs",
@@ -274,20 +272,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GlassesShopContext.cs",
-              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\DBContext\\GlassesShopContext.cs",
-              "RelativeDocumentMoniker": "DAL\\DBContext\\GlassesShopContext.cs",
-              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\DBContext\\GlassesShopContext.cs",
-              "RelativeToolTip": "DAL\\DBContext\\GlassesShopContext.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\Interfaces\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IOrderRepository.cs",
+              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\Interfaces\\IOrderRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAACgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T07:05:46.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T04:05:45.265Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\Implementations\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Implementations\\OrderRepository.cs",
+              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\Implementations\\OrderRepository.cs",
+              "RelativeToolTip": "DAL\\Implementations\\OrderRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAmwAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T04:06:09.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\BLL\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\OrderService.cs",
+              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\BLL\\Services\\OrderService.cs",
+              "RelativeToolTip": "BLL\\Services\\OrderService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCIAAAB0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T04:21:10.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "OrderDetailsWindow.xaml.cs",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\OrderDetailsWindow.xaml.cs",
               "RelativeDocumentMoniker": "WpfApp_CLassesShop\\OrderDetailsWindow.xaml.cs",
@@ -299,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "CheckoutWindow.xaml",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\CheckoutWindow.xaml",
               "RelativeDocumentMoniker": "WpfApp_CLassesShop\\CheckoutWindow.xaml",
@@ -310,19 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "LoginWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\LoginWindow.xaml.cs",
-              "RelativeDocumentMoniker": "WpfApp_CLassesShop\\LoginWindow.xaml.cs",
-              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\LoginWindow.xaml.cs",
-              "RelativeToolTip": "WpfApp_CLassesShop\\LoginWindow.xaml.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAuwDQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T06:55:13.726Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\MainWindow.xaml",
               "RelativeDocumentMoniker": "WpfApp_CLassesShop\\MainWindow.xaml",
@@ -333,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "WpfApp_CLassesShop\\MainWindow.xaml.cs",
@@ -345,7 +354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "OrderHistoryWindow.xaml",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\OrderHistoryWindow.xaml",
               "RelativeDocumentMoniker": "WpfApp_CLassesShop\\OrderHistoryWindow.xaml",
@@ -356,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "OrderDetailsWindow.xaml",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\OrderDetailsWindow.xaml",
               "RelativeDocumentMoniker": "WpfApp_CLassesShop\\OrderDetailsWindow.xaml",
@@ -367,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Session.cs",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\Session\\Session.cs",
               "RelativeDocumentMoniker": "WpfApp_CLassesShop\\Session\\Session.cs",
@@ -376,17 +385,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-22T06:53:25.562Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "LoginWindow.xaml",
-              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\LoginWindow.xaml",
-              "RelativeDocumentMoniker": "WpfApp_CLassesShop\\LoginWindow.xaml",
-              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\LoginWindow.xaml",
-              "RelativeToolTip": "WpfApp_CLassesShop\\LoginWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-22T06:31:33.929Z"
             },
             {
               "$type": "Document",
@@ -533,18 +531,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\BLL\\Services\\AccountService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\AccountService.cs",
-              "ToolTip": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\BLL\\Services\\AccountService.cs",
-              "RelativeToolTip": "BLL\\Services\\AccountService.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAnwD0AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T06:30:19.503Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 28,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\Implementations\\ProductRepository.cs",
@@ -557,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 29,
               "Title": "RegisterWindow.xaml.cs",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\RegisterWindow.xaml.cs",
               "RelativeDocumentMoniker": "WpfApp_CLassesShop\\RegisterWindow.xaml.cs",
@@ -569,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 30,
               "Title": "IAccountRepository.cs",
               "DocumentMoniker": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\DAL\\Interfaces\\IAccountRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Interfaces\\IAccountRepository.cs",
