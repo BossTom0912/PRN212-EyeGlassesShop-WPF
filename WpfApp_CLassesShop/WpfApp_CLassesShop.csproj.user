@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Admin\AdminDashboardWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\AdminUsersWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CartWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

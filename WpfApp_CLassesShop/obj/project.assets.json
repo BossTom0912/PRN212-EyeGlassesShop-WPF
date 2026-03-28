@@ -3193,23 +3193,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Tom\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj",
+      "projectUniqueName": "D:\\FPT\\TaiLieu\\PRN212\\Project\\Final_Project\\EyeGlasses_Store\\EyeGlasses_Store\\WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj",
       "projectName": "WpfApp_CLassesShop",
-      "projectPath": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\obj\\",
+      "projectPath": "D:\\FPT\\TaiLieu\\PRN212\\Project\\Final_Project\\EyeGlasses_Store\\EyeGlasses_Store\\WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj",
+      "packagesPath": "C:\\Users\\Tom\\.nuget\\packages\\",
+      "outputPath": "D:\\FPT\\TaiLieu\\PRN212\\Project\\Final_Project\\EyeGlasses_Store\\EyeGlasses_Store\\WpfApp_CLassesShop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tom\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3218,15 +3218,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\BLL\\BLL.csproj": {
-              "projectPath": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\BLL\\BLL.csproj"
+            "D:\\FPT\\TaiLieu\\PRN212\\Project\\Final_Project\\EyeGlasses_Store\\EyeGlasses_Store\\BLL\\BLL.csproj": {
+              "projectPath": "D:\\FPT\\TaiLieu\\PRN212\\Project\\Final_Project\\EyeGlasses_Store\\EyeGlasses_Store\\BLL\\BLL.csproj"
             }
           }
         }
@@ -3240,7 +3239,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -3264,7 +3264,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
