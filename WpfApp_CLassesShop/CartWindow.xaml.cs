@@ -1,24 +1,11 @@
-﻿using BLL.Services;
-using DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BLL.Constants;
+using BLL.Services;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using WpfApp_CLassesShop.Session;
 
 namespace WpfApp_CLassesShop
 {
-    /// <summary>
-    /// Interaction logic for CartWindow.xaml
-    /// </summary>
     public partial class CartWindow : Window
     {
         public CartWindow()
@@ -28,16 +15,24 @@ namespace WpfApp_CLassesShop
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (Session.Session.LoggedInAccount != null)
+            if (CurrentSession.LoggedInAccount == null)
             {
-                LoadCartData();
+                MessageBox.Show("Phiên đăng nhập đã hết. Vui lòng đăng nhập lại.");
+                new LoginWindow().Show();
+                Close();
+                return;
             }
+
+            LoadCartData();
         }
 
         private void LoadCartData()
         {
+            var currentAccount = CurrentSession.LoggedInAccount;
+            if (currentAccount == null) return;
+
             CartService cartService = new CartService();
-            var items = cartService.GetCartSummary((int)Session.Session.LoggedInAccount.Id);
+            var items = cartService.GetCartSummary((int)currentAccount.Id);
 
             dgCart.ItemsSource = items;
 
@@ -49,10 +44,21 @@ namespace WpfApp_CLassesShop
         {
             try
             {
+                var currentAccount = CurrentSession.LoggedInAccount;
+                if (currentAccount == null)
+                {
+                    MessageBox.Show("Phiên đăng nhập đã hết. Vui lòng đăng nhập lại.");
+                    new LoginWindow().Show();
+                    Close();
+                    return;
+                }
+
                 if (dgCart.Items.Count == 0)
                 {
-                    MessageBox.Show("Giỏ hàng của bạn đang trống! Hãy chọn món đồ yêu thích trước khi thanh toán nhé.",
-                                     "Giỏ hàng trống", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Giỏ hàng của bạn đang trống!",
+                                     "Giỏ hàng trống",
+                                     MessageBoxButton.OK,
+                                     MessageBoxImage.Warning);
                     return;
                 }
 
@@ -63,45 +69,61 @@ namespace WpfApp_CLassesShop
                     string name = checkoutWin.ReceiverName;
                     string phone = checkoutWin.Phone;
                     string address = checkoutWin.ShippingAddress;
+                    string paymentMethod = checkoutWin.PaymentMethod;
 
                     OrderService orderService = new OrderService();
-
                     string orderCode = "ORD" + DateTime.UtcNow.ToString("yyyyMMddHHmmss");
 
-                    orderService.PlaceOrder((int)Session.Session.LoggedInAccount.Id, name, phone, address, orderCode, "COD");
+                    orderService.PlaceOrder((int)currentAccount.Id, name, phone, address, orderCode, paymentMethod);
 
-                    var items = dgCart.ItemsSource as IEnumerable<BLL.Services.CartItemDisplay>;
-                    decimal totalAmount = items != null ? items.Sum(x => x.TotalPrice) : 100000;
+                    var items = dgCart.ItemsSource as IEnumerable<CartItemDisplay>;
+                    decimal totalAmount = items != null ? items.Sum(x => x.TotalPrice) : 0;
 
-                    string vnpayUrl = orderService.GenerateVnPayUrl(totalAmount, orderCode);
-
-                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    if (paymentMethod.Equals("VNPAY", StringComparison.OrdinalIgnoreCase))
                     {
-                        FileName = vnpayUrl,
-                        UseShellExecute = true
-                    });
+                        string vnpayUrl = orderService.GenerateVnPayUrl(totalAmount, orderCode);
 
-                    MessageBoxResult result = MessageBox.Show(
-                        "Trình duyệt đã được mở để bạn thanh toán qua VNPAY.\n\n" +
-                        "👉 Nếu bạn ĐÃ thanh toán thành công, vui lòng chọn 'Yes'.\n" +
-                        "👉 Nếu bạn HỦY hoặc giao dịch bị lỗi, vui lòng chọn 'No'.",
-                        "Xác nhận thanh toán VNPAY",
-                        MessageBoxButton.YesNo,
-                        MessageBoxImage.Question);
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                        {
+                            FileName = vnpayUrl,
+                            UseShellExecute = true
+                        });
 
-                    if (result == MessageBoxResult.Yes)
-                    {
-                        orderService.UpdateOrderStatus(orderCode, "APPROVED");
+                        MessageBoxResult result = MessageBox.Show(
+                            "Trình duyệt đã được mở để bạn thanh toán qua VNPAY.\n\n" +
+                            "Nếu bạn đã thanh toán thành công, chọn YES.\n" +
+                            "Nếu bạn hủy hoặc giao dịch thất bại, chọn NO.",
+                            "Xác nhận thanh toán VNPAY",
+                            MessageBoxButton.YesNo,
+                            MessageBoxImage.Question);
 
-                        MessageBox.Show("🎉 Tuyệt vời! Cảm ơn bạn đã thanh toán. Đơn hàng sẽ sớm được xử lý và giao đến bạn!",
-                                         "Thanh toán thành công", MessageBoxButton.OK, MessageBoxImage.Information);
+                        if (result == MessageBoxResult.Yes)
+                        {
+                            orderService.UpdateOrderStatus(
+                                orderCode,
+                                OrderStatuses.WaitingConfirm,
+                                currentAccount.Id,
+                                "Khách hàng xác nhận đã thanh toán VNPAY.");
+
+                            MessageBox.Show("Thanh toán thành công. Đơn hàng đang chờ support xác nhận.",
+                                "Thành công", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                        else
+                        {
+                            orderService.UpdateOrderStatus(
+                                orderCode,
+                                OrderStatuses.Cancelled,
+                                currentAccount.Id,
+                                "Khách hàng hủy hoặc thanh toán thất bại qua VNPAY.");
+
+                            MessageBox.Show("Giao dịch chưa hoàn tất. Đơn hàng đã bị hủy.",
+                                "Đã hủy thanh toán", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
                     }
                     else
                     {
-                        orderService.UpdateOrderStatus(orderCode, "CANCELLED");
-
-                        MessageBox.Show("Giao dịch chưa hoàn tất hoặc đã bị hủy. Đơn hàng này sẽ bị hủy bỏ.",
-                                         "Đã hủy thanh toán", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        MessageBox.Show("Đặt hàng thành công. Đơn hàng đang ở trạng thái chờ support xác nhận.",
+                            "Thành công", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
 
                     LoadCartData();
@@ -109,63 +131,70 @@ namespace WpfApp_CLassesShop
             }
             catch (Exception ex)
             {
-                string errorMessage = ex.Message;
-
-                // Móc lỗi sâu bên trong (Inner Exception) ra để xem Database đang chửi gì
-                if (ex.InnerException != null)
-                {
-                    errorMessage += "\n\nCHI TIẾT TỪ DATABASE:\n" + ex.InnerException.Message;
-                }
-
-                MessageBox.Show($"Lỗi thanh toán: {errorMessage}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Lỗi thanh toán: {ex.Message}",
+                    "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        //Xóa:
-        // Nút Trừ
         private void btnDecrease_Click(object sender, RoutedEventArgs e)
         {
+            var currentAccount = CurrentSession.LoggedInAccount;
+            if (currentAccount == null) return;
+
             Button btn = sender as Button;
-            var selectedItem = btn.DataContext as BLL.Services.CartItemDisplay;
+            var selectedItem = btn?.DataContext as CartItemDisplay;
             if (selectedItem != null)
             {
                 CartService cartService = new CartService();
-                cartService.UpdateQuantity((int)Session.Session.LoggedInAccount.Id, selectedItem.ProductVariantId, -1);
-                LoadCartData(); 
+                cartService.UpdateQuantity((int)currentAccount.Id, selectedItem.ProductVariantId, -1);
+                LoadCartData();
             }
         }
 
-        // Nút Cộng
         private void btnIncrease_Click(object sender, RoutedEventArgs e)
         {
-            Button btn = sender as Button;
-            var selectedItem = btn.DataContext as BLL.Services.CartItemDisplay;
-            if (selectedItem != null)
+            try
             {
-                CartService cartService = new CartService();
-                cartService.UpdateQuantity((int)Session.Session.LoggedInAccount.Id, selectedItem.ProductVariantId, 1);
-                LoadCartData(); 
+                var currentAccount = CurrentSession.LoggedInAccount;
+                if (currentAccount == null) return;
+
+                Button btn = sender as Button;
+                var selectedItem = btn?.DataContext as CartItemDisplay;
+                if (selectedItem != null)
+                {
+                    CartService cartService = new CartService();
+                    cartService.UpdateQuantity((int)currentAccount.Id, selectedItem.ProductVariantId, 1);
+                    LoadCartData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
-        // Nút Xóa hẳn 
         private void btnRemoveAll_Click(object sender, RoutedEventArgs e)
         {
+            var currentAccount = CurrentSession.LoggedInAccount;
+            if (currentAccount == null) return;
+
             Button btn = sender as Button;
-            var selectedItem = btn.DataContext as BLL.Services.CartItemDisplay;
+            var selectedItem = btn?.DataContext as CartItemDisplay;
             if (selectedItem != null)
             {
-                var confirm = MessageBox.Show($"Bạn có chắc chắn muốn xóa toàn bộ '{selectedItem.ProductName}' khỏi giỏ không?",
-                                              "Xác nhận xóa", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                var confirm = MessageBox.Show(
+                    $"Bạn có chắc chắn muốn xóa toàn bộ '{selectedItem.ProductName}' khỏi giỏ không?",
+                    "Xác nhận xóa",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Warning);
+
                 if (confirm == MessageBoxResult.Yes)
                 {
                     CartService cartService = new CartService();
-                    cartService.RemoveItemCompletely((int)Session.Session.LoggedInAccount.Id, selectedItem.ProductVariantId);
+                    cartService.RemoveItemCompletely((int)currentAccount.Id, selectedItem.ProductVariantId);
                     LoadCartData();
                 }
             }
         }
-
-
     }
 }

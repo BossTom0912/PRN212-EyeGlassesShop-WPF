@@ -1,4 +1,5 @@
-﻿using DAL.Models;
+﻿using BLL.Constants;
+using DAL.Models;
 
 namespace WpfApp_CLassesShop.Session
 {
@@ -6,8 +7,8 @@ namespace WpfApp_CLassesShop.Session
     {
         public static Account? LoggedInAccount { get; set; }
 
-        public static bool IsAdmin => LoggedInAccount?.Role?.Name == "Admin";
-        public static bool IsSupportStaff => LoggedInAccount?.Role?.Name == "ShopOwner";
-        public static bool IsCustomer => LoggedInAccount?.Role?.Name == "User";
+        public static bool IsAdmin => AppRoles.IsAdmin(LoggedInAccount?.Role?.Name);
+        public static bool IsSupportStaff => AppRoles.IsSupportStaff(LoggedInAccount?.Role?.Name);
+        public static bool IsCustomer => AppRoles.IsCustomer(LoggedInAccount?.Role?.Name);
     }
 }

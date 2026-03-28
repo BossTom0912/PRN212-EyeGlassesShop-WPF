@@ -1,23 +1,9 @@
 ﻿using BLL.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using WpfApp_CLassesShop.Session;
 
 namespace WpfApp_CLassesShop
 {
-    /// <summary>
-    /// Interaction logic for OrderDetailsWindow.xaml
-    /// </summary>
     public partial class OrderDetailsWindow : Window
     {
         private int _currentOrderId;
@@ -25,7 +11,7 @@ namespace WpfApp_CLassesShop
         public OrderDetailsWindow(int orderId)
         {
             InitializeComponent();
-            _currentOrderId = orderId; 
+            _currentOrderId = orderId;
             LoadDetails(orderId);
         }
 
@@ -37,9 +23,10 @@ namespace WpfApp_CLassesShop
                 var items = orderService.GetOrderDetails(orderId);
                 dgOrderDetails.ItemsSource = items;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi tải chi tiết đơn hàng: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Lỗi tải chi tiết đơn hàng: " + ex.Message,
+                    "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -47,29 +34,35 @@ namespace WpfApp_CLassesShop
         {
             try
             {
-                int currentUserId = (int)Session.Session.LoggedInAccount.Id;
+                if (CurrentSession.LoggedInAccount == null)
+                {
+                    MessageBox.Show("Phiên đăng nhập đã hết. Vui lòng đăng nhập lại.");
+                    new LoginWindow().Show();
+                    this.Close();
+                    return;
+                }
+
+                int currentUserId = (int)CurrentSession.LoggedInAccount.Id;
 
                 OrderService orderService = new OrderService();
-
                 orderService.AddOldOrderToCart(_currentOrderId, currentUserId);
 
                 MessageBoxResult result = MessageBox.Show(
-                    "Đã thêm toàn bộ sản phẩm của đơn hàng này vào Giỏ hàng của bạn!\n\nBạn có muốn mở Giỏ hàng để thanh toán ngay không?",
+                    "Đã thêm toàn bộ sản phẩm của đơn hàng này vào Giỏ hàng.\n\nBạn có muốn mở Giỏ hàng ngay không?",
                     "Thêm vào giỏ thành công",
                     MessageBoxButton.YesNo,
                     MessageBoxImage.Information);
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    var cartWin = new CartWindow();
-                    cartWin.Show();
-
+                    new CartWindow().Show();
                     this.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra khi mua lại: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Có lỗi xảy ra khi mua lại: " + ex.Message,
+                    "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

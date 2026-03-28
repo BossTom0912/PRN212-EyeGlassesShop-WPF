@@ -124,7 +124,7 @@ namespace WpfApp_CLassesShop {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WpfApp_CLassesShop;V1.0.0.0;component/supportorderdetailswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WpfApp_CLassesShop;component/supportorderdetailswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SupportOrderDetailsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

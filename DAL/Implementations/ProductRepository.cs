@@ -1,11 +1,6 @@
 ﻿using DAL.DBContext;
 using DAL.Interfaces;
 using DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL.Implementations
 {
@@ -15,7 +10,11 @@ namespace DAL.Implementations
         {
             using (var context = new GlassesShopContext())
             {
-                return context.VwProductVariantLists.ToList();
+                return context.VwProductVariantLists
+                    .Where(p => p.ProductIsActive == true
+                             && p.VariantIsActive == true
+                             && p.StockQuantity > 0)
+                    .ToList();
             }
         }
     }
