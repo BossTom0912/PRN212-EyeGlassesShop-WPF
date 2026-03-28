@@ -1,24 +1,11 @@
 ﻿using BLL.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using WpfApp_CLassesShop.Session;
+using WpfApp_CLassesShop.Admin;
 
 namespace WpfApp_CLassesShop
 {
-    /// <summary>
-    /// Interaction logic for LoginWindow.xaml
-    /// </summary>
     public partial class LoginWindow : Window
     {
         private readonly AccountService _accountService;
@@ -44,13 +31,27 @@ namespace WpfApp_CLassesShop
 
             if (account != null)
             {
-                // Lưu vào Session giống vậy nè mấy ní 
-                Session.Session.LoggedInAccount = account;
+                CurrentSession.LoggedInAccount = account;
                 MessageBox.Show($"Đăng nhập thành công! Xin chào {account.FullName}", "Thành công", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                MainWindow main = new MainWindow();
-                main.Show();
-                this.Close(); 
+                string roleName = account.Role?.Name ?? "";
+
+                if (roleName == "Admin")
+                {
+                    AdminDashboardWindow adminWindow = new AdminDashboardWindow();
+                    adminWindow.Show();
+                }
+                else if (roleName == "ShopOwner")
+                {
+                    MessageBox.Show("Chào mừng bạn đến với giao diện Quản lý Đơn Hàng (Staff) - Đang phát triển", "Staff Dashboard", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MainWindow main = new MainWindow();
+                    main.Show();
+                }
+
+                this.Close();
             }
             else
             {

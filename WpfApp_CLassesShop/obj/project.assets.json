@@ -3193,23 +3193,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\BACH\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj",
+      "projectUniqueName": "C:\\Users\\BACH\\PRN212-EyeGlassesShop-WPF\\WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj",
       "projectName": "WpfApp_CLassesShop",
-      "projectPath": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\WpfApp_CLassesShop\\obj\\",
+      "projectPath": "C:\\Users\\BACH\\PRN212-EyeGlassesShop-WPF\\WpfApp_CLassesShop\\WpfApp_CLassesShop.csproj",
+      "packagesPath": "C:\\Users\\BACH\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\BACH\\PRN212-EyeGlassesShop-WPF\\WpfApp_CLassesShop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\BACH\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3225,8 +3225,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\BLL\\BLL.csproj": {
-              "projectPath": "D:\\Ki8-FPT\\PRN212_new\\SE1935\\CodeNhom\\GlassesShop\\BLL\\BLL.csproj"
+            "C:\\Users\\BACH\\PRN212-EyeGlassesShop-WPF\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\BACH\\PRN212-EyeGlassesShop-WPF\\BLL\\BLL.csproj"
             }
           }
         }
@@ -3240,7 +3240,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -3264,7 +3265,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
