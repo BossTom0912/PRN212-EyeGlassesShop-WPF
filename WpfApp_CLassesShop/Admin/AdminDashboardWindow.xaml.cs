@@ -24,14 +24,12 @@ namespace WpfApp_CLassesShop.Admin
 
         private void BtnManageProducts_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Màn hình quản lý sản phẩm chưa được triển khai xong.",
-                "Chưa hoàn thiện", MessageBoxButton.OK, MessageBoxImage.Information);
+            new AdminProductsWindow().ShowDialog();
         }
 
         private void BtnManageVariants_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Màn hình quản lý biến thể chưa được triển khai xong.",
-                "Chưa hoàn thiện", MessageBoxButton.OK, MessageBoxImage.Information);
+            new AdminVariantsWindow().ShowDialog();
         }
 
         private void BtnLogout_Click(object sender, RoutedEventArgs e)

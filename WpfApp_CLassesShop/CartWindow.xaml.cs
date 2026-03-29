@@ -101,7 +101,7 @@ namespace WpfApp_CLassesShop
                         {
                             orderService.UpdateOrderStatus(
                                 orderCode,
-                                OrderStatuses.WaitingConfirm,
+                                "WAITING_CONFIRM",
                                 currentAccount.Id,
                                 "Khách hàng xác nhận đã thanh toán VNPAY.");
 
@@ -112,8 +112,8 @@ namespace WpfApp_CLassesShop
                         {
                             orderService.UpdateOrderStatus(
                                 orderCode,
-                                OrderStatuses.Cancelled,
-                                currentAccount.Id,
+                                "CANCELLED",
+                                currentAccount.Id,  
                                 "Khách hàng hủy hoặc thanh toán thất bại qua VNPAY.");
 
                             MessageBox.Show("Giao dịch chưa hoàn tất. Đơn hàng đã bị hủy.",

@@ -10,7 +10,19 @@
     <Compile Update="Admin\AdminDashboardWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Admin\AdminProductEditWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Admin\AdminUsersWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\AdminProductsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\AdminVariantEditWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\AdminVariantsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="CartWindow.xaml.cs">

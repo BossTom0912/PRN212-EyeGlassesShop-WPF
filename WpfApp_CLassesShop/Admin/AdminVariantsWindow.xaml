@@ -1,0 +1,61 @@
+﻿<Window x:Class="WpfApp_CLassesShop.Admin.AdminVariantsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Quản lý biến thể"
+        Height="650" Width="1150"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Padding="10" Margin="0,0,0,10" BorderBrush="#DDD" BorderThickness="1" CornerRadius="8">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                    <Button x:Name="btnAdd" Content="Thêm biến thể" Width="120" Height="34" Margin="0,0,10,0" Click="BtnAdd_Click"/>
+                    <Button x:Name="btnEdit" Content="Sửa" Width="90" Height="34" Margin="0,0,10,0" Click="BtnEdit_Click"/>
+                    <Button x:Name="btnDelete" Content="Ẩn biến thể" Width="110" Height="34" Margin="0,0,10,0" Click="BtnDelete_Click"/>
+                    <Button x:Name="btnRefresh" Content="Làm mới" Width="90" Height="34" Click="BtnRefresh_Click"/>
+                </StackPanel>
+
+                <CheckBox x:Name="chkShowInactive"
+                          Content="Hiện cả biến thể đã ẩn"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Right"
+                          Checked="ChkShowInactive_Changed"
+                          Unchecked="ChkShowInactive_Changed"/>
+            </DockPanel>
+        </Border>
+
+        <DataGrid x:Name="dgVariants"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  CanUserAddRows="False"
+                  HeadersVisibility="Column"
+                  Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Variant ID" Binding="{Binding VariantId}" Width="80"/>
+                <DataGridTextColumn Header="Product ID" Binding="{Binding ProductId}" Width="80"/>
+                <DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding ProductName}" Width="180"/>
+                <DataGridTextColumn Header="SKU" Binding="{Binding Sku}" Width="150"/>
+                <DataGridTextColumn Header="Color" Binding="{Binding Color}" Width="100"/>
+                <DataGridTextColumn Header="Size" Binding="{Binding Size}" Width="90"/>
+                <DataGridTextColumn Header="Material" Binding="{Binding Material}" Width="120"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat=N0}" Width="110"/>
+                <DataGridTextColumn Header="Stock" Binding="{Binding StockQuantity}" Width="90"/>
+                <DataGridCheckBoxColumn Header="Variant Active" Binding="{Binding VariantIsActive}" Width="95"/>
+                <DataGridCheckBoxColumn Header="Product Active" Binding="{Binding ProductIsActive}" Width="95"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock x:Name="txtSummary"
+                   Grid.Row="2"
+                   FontWeight="SemiBold"
+                   Text="Tổng số biến thể: 0"/>
+    </Grid>
+</Window>

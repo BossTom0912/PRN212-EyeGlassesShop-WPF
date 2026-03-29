@@ -3,13 +3,17 @@ using DAL.DBContext;
 using DAL.Interfaces;
 using DAL.Models;
 using Microsoft.EntityFrameworkCore;
-
+using DAL.Constants;
 namespace DAL.Implementations
 {
     public class OrderRepository : IOrderRepository
     {
         public void Checkout(int accountId, List<CartItem> cartItems, string receiverName, string phone, string shippingAddress, string orderCode, string paymentMethod)
         {
+            paymentMethod = PaymentMethods.Normalize(paymentMethod);
+            string initialStatus = paymentMethod == PaymentMethods.VNPAY
+     ? OrderStatuses.PendingPayment
+        : OrderStatuses.WaitingConfirm;
             using (var context = new GlassesShopContext())
             using (var transaction = context.Database.BeginTransaction())
             {
@@ -35,7 +39,9 @@ namespace DAL.Implementations
 
                     decimal totalAmount = cartItems.Sum(item => item.Quantity * item.UnitPrice);
 
-                    string initialStatus = paymentMethod.Equals("VNPAY", StringComparison.OrdinalIgnoreCase)
+                    paymentMethod = PaymentMethods.Normalize(paymentMethod);
+
+                    string orderStatus = paymentMethod == PaymentMethods.VNPAY
                         ? OrderStatuses.PendingPayment
                         : OrderStatuses.WaitingConfirm;
 
@@ -47,7 +53,7 @@ namespace DAL.Implementations
                         Phone = phone,
                         ShippingAddress = shippingAddress,
                         OrderDate = now,
-                        Status = initialStatus,
+                        Status = orderStatus,
                         PaymentMethod = paymentMethod,
                         TotalAmount = totalAmount,
                         CreatedAt = now,
@@ -82,12 +88,12 @@ namespace DAL.Implementations
                     }
 
                     AddOrderStatusHistory(
-                        context,
-                        order.Id,
-                        null,
-                        initialStatus,
-                        accountId,
-                        "Khách hàng tạo đơn hàng.");
+    context,
+    order.Id,
+    null,
+    orderStatus,
+    accountId,
+    "Khách hàng tạo đơn hàng.");
 
                     context.CartItems.RemoveRange(cartItems);
 
@@ -217,7 +223,7 @@ namespace DAL.Implementations
                 var oldStatus = order.Status;
                 var now = DateTime.UtcNow;
 
-                order.Status = OrderStatuses.SupportConfirmed;
+                order.Status = OrderStatuses.Confirmed;
                 order.ApprovedByOwnerId = staffId;
                 order.ApprovedAt = now;
                 order.UpdatedAt = now;
@@ -226,7 +232,7 @@ namespace DAL.Implementations
                     context,
                     order.Id,
                     oldStatus,
-                    OrderStatuses.SupportConfirmed,
+                    OrderStatuses.Confirmed,
                     staffId,
                     "Support staff xác nhận đơn hàng.");
 
@@ -244,7 +250,7 @@ namespace DAL.Implementations
                 if (order == null)
                     throw new Exception("Không tìm thấy đơn hàng.");
 
-                if (order.Status != OrderStatuses.SupportConfirmed)
+                if (order.Status != OrderStatuses.Confirmed)
                     throw new Exception("Chỉ đơn đã được support xác nhận mới được hoàn tất.");
 
                 var oldStatus = order.Status;
