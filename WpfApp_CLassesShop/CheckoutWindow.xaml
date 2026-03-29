@@ -78,6 +78,19 @@
                 <TextBox x:Name="txtAddress" Style="{StaticResource ModernTextBox}" 
                          Height="80" VerticalContentAlignment="Top" Padding="10"
                          TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,0,25"/>
+                <TextBlock Text="Phương thức thanh toán (*):"
+           Foreground="#64748B"
+           FontWeight="SemiBold"
+           Margin="0,0,0,5"/>
+
+                <ComboBox x:Name="cboPaymentMethod"
+          Height="40"
+          Margin="0,0,0,20"
+          FontSize="14"
+          SelectedIndex="0">
+                    <ComboBoxItem Content="Thanh toán khi nhận hàng (COD)" Tag="COD"/>
+                    <ComboBoxItem Content="Thanh toán online qua VNPAY" Tag="VNPAY"/>
+                </ComboBox>
 
                 <Grid>
                     <Grid.ColumnDefinitions>

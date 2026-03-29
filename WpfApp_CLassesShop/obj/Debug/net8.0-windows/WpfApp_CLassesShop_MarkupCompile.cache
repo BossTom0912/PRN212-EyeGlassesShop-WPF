@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\BACH\PRN212-EyeGlassesShop-WPF\WpfApp_CLassesShop\obj\Debug\net8.0-windows\
+D:\FPT\TaiLieu\PRN212\Project\Final_Project\EyeGlasses_Store\EyeGlasses_Store\WpfApp_CLassesShop\obj\Debug\net8.0-windows\
 WpfApp_CLassesShop
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\BACH\PRN212-EyeGlassesShop-WPF\WpfApp_CLassesShop\App.xaml
-9-1356027340
+D:\FPT\TaiLieu\PRN212\Project\Final_Project\EyeGlasses_Store\EyeGlasses_Store\WpfApp_CLassesShop\App.xaml
+11-1753822587
 
-14-1296794396
-238138345842
-Admin\AdminDashboardWindow.xaml;Admin\AdminUsersWindow.xaml;CartWindow.xaml;CheckoutWindow.xaml;LoginWindow.xaml;MainWindow.xaml;OrderDetailsWindow.xaml;OrderHistoryWindow.xaml;RegisterWindow.xaml;
+151493803301
+238-617987494
+Admin\AdminDashboardWindow.xaml;Admin\AdminUsersWindow.xaml;CartWindow.xaml;CheckoutWindow.xaml;LoginWindow.xaml;MainWindow.xaml;OrderDetailsWindow.xaml;OrderHistoryWindow.xaml;RegisterWindow.xaml;SupportOrderDetailsWindow.xaml;SupportOrdersWindow.xaml;
 
 False
 

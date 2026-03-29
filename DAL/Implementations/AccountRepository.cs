@@ -1,25 +1,44 @@
 ﻿using DAL.DBContext;
 using DAL.Interfaces;
 using DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Implementations
 {
     public class AccountRepository : IAccountRepository
     {
-        public Account GetAccountByEmail(string email)
+        public Account? GetAccountByEmail(string email)
         {
             using (var context = new GlassesShopContext())
             {
-                return context.Accounts.FirstOrDefault(a => a.Email == email && a.IsActive == true);
+                return context.Accounts
+                              .Include(a => a.Role)
+                              .FirstOrDefault(a => a.Email == email);
             }
         }
 
-        public Role GetRoleByName(string roleName)
+        public Account? GetAccountById(long id)
+        {
+            using (var context = new GlassesShopContext())
+            {
+                return context.Accounts
+                              .Include(a => a.Role)
+                              .FirstOrDefault(a => a.Id == id);
+            }
+        }
+
+        public List<Account> GetAllAccounts()
+        {
+            using (var context = new GlassesShopContext())
+            {
+                return context.Accounts
+                              .Include(a => a.Role)
+                              .OrderBy(a => a.Id)
+                              .ToList();
+            }
+        }
+
+        public Role? GetRoleByName(string roleName)
         {
             using (var context = new GlassesShopContext())
             {
@@ -41,6 +60,15 @@ namespace DAL.Implementations
             using (var context = new GlassesShopContext())
             {
                 context.Carts.Add(cart);
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateAccount(Account account)
+        {
+            using (var context = new GlassesShopContext())
+            {
+                context.Accounts.Update(account);
                 context.SaveChanges();
             }
         }

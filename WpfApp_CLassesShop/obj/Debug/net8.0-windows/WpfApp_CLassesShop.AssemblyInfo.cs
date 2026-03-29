@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WpfApp_CLassesShop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0a1f1ae4301fd4ce0ebd1c76c66bb672f3eb097")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+637c4c7ddd564281d5d325c012eb4ac738eca67d")]
 [assembly: System.Reflection.AssemblyProductAttribute("WpfApp_CLassesShop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WpfApp_CLassesShop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

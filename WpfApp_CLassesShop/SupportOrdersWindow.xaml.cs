@@ -1,7 +1,8 @@
-﻿using BLL.Services;
+﻿using BLL.Constants;
+using BLL.Services;
 using DAL.Models;
-using System;
 using System.Windows;
+using WpfApp_CLassesShop.Session;
 
 namespace WpfApp_CLassesShop
 {
@@ -19,23 +20,20 @@ namespace WpfApp_CLassesShop
         {
             try
             {
-                var account = Session.Session.LoggedInAccount;
+                var account = CurrentSession.LoggedInAccount;
                 if (account == null)
                 {
                     MessageBox.Show("Phiên đăng nhập đã hết. Vui lòng đăng nhập lại.");
                     new LoginWindow().Show();
-                    this.Close();
+                    Close();
                     return;
                 }
 
-                string roleName = account.Role?.Name?.Trim() ?? "";
-                if (!roleName.Equals("Owner", StringComparison.OrdinalIgnoreCase) &&
-                    !roleName.Equals("SupportStaff", StringComparison.OrdinalIgnoreCase) &&
-                    !roleName.Equals("Support Staff", StringComparison.OrdinalIgnoreCase))
+                if (!AppRoles.IsSupportStaff(account.Role?.Name))
                 {
                     MessageBox.Show("Bạn không có quyền vào màn hình Support Staff.");
                     new LoginWindow().Show();
-                    this.Close();
+                    Close();
                     return;
                 }
 
@@ -44,7 +42,7 @@ namespace WpfApp_CLassesShop
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi load màn support:\n\n" + ex.ToString(), "Lỗi");
+                MessageBox.Show("Lỗi khi load màn support:\n\n" + ex, "Lỗi");
             }
         }
 
@@ -57,11 +55,11 @@ namespace WpfApp_CLassesShop
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi load danh sách đơn:\n\n" + ex.ToString(), "Lỗi");
+                MessageBox.Show("Lỗi khi load danh sách đơn:\n\n" + ex.Message, "Lỗi");
             }
         }
 
-        private Order GetSelectedOrder()
+        private Order? GetSelectedOrder()
         {
             var order = dgOrders.SelectedItem as Order;
             if (order == null)
@@ -69,6 +67,7 @@ namespace WpfApp_CLassesShop
                 MessageBox.Show("Vui lòng chọn một đơn hàng trước.");
                 return null;
             }
+
             return order;
         }
 
@@ -84,21 +83,19 @@ namespace WpfApp_CLassesShop
 
             var detailWindow = new SupportOrderDetailsWindow(selectedOrder.Id);
             detailWindow.ShowDialog();
-
             LoadOrders();
         }
 
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
         {
+            var currentAccount = CurrentSession.LoggedInAccount;
             var selectedOrder = GetSelectedOrder();
-            if (selectedOrder == null) return;
+
+            if (currentAccount == null || selectedOrder == null) return;
 
             try
             {
-                long staffId = Session.Session.LoggedInAccount.Id;
-
-                _supportService.ConfirmOrder(selectedOrder.Id, staffId);
-
+                _supportService.ConfirmOrder(selectedOrder.Id, currentAccount.Id);
                 MessageBox.Show("Xác nhận đơn thành công.");
                 LoadOrders();
             }
@@ -110,15 +107,14 @@ namespace WpfApp_CLassesShop
 
         private void btnComplete_Click(object sender, RoutedEventArgs e)
         {
+            var currentAccount = CurrentSession.LoggedInAccount;
             var selectedOrder = GetSelectedOrder();
-            if (selectedOrder == null) return;
+
+            if (currentAccount == null || selectedOrder == null) return;
 
             try
             {
-                long staffId = Session.Session.LoggedInAccount.Id;
-
-                _supportService.CompleteOrder(selectedOrder.Id, staffId);
-
+                _supportService.CompleteOrder(selectedOrder.Id, currentAccount.Id);
                 MessageBox.Show("Đã đánh dấu hoàn tất đơn hàng.");
                 LoadOrders();
             }
@@ -130,8 +126,10 @@ namespace WpfApp_CLassesShop
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
+            var currentAccount = CurrentSession.LoggedInAccount;
             var selectedOrder = GetSelectedOrder();
-            if (selectedOrder == null) return;
+
+            if (currentAccount == null || selectedOrder == null) return;
 
             var confirm = MessageBox.Show(
                 $"Bạn có chắc muốn hủy đơn {selectedOrder.OrderCode} không?",
@@ -143,10 +141,8 @@ namespace WpfApp_CLassesShop
 
             try
             {
-                long staffId = Session.Session.LoggedInAccount.Id;
                 string reason = "Support staff hủy đơn vì shop chưa thể xử lý đơn hàng.";
-
-                _supportService.CancelOrder(selectedOrder.Id, staffId, reason);
+                _supportService.CancelOrder(selectedOrder.Id, currentAccount.Id, reason);
 
                 MessageBox.Show("Hủy đơn thành công.");
                 LoadOrders();
@@ -159,9 +155,9 @@ namespace WpfApp_CLassesShop
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            Session.Session.LoggedInAccount = null;
+            CurrentSession.LoggedInAccount = null;
             new LoginWindow().Show();
-            this.Close();
+            Close();
         }
     }
 }

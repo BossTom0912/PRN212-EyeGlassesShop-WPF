@@ -1,8 +1,9 @@
-﻿using BLL.Services;
+﻿using BLL.Constants;
+using BLL.Services;
 using System.Windows;
 using System.Windows.Input;
-using WpfApp_CLassesShop.Session;
 using WpfApp_CLassesShop.Admin;
+using WpfApp_CLassesShop.Session;
 
 namespace WpfApp_CLassesShop
 {
@@ -21,47 +22,56 @@ namespace WpfApp_CLassesShop
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Password;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ Email và Mật khẩu!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Vui lòng nhập đầy đủ Email và Mật khẩu!",
+                    "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             var account = _accountService.Login(email, password);
 
-            if (account != null)
+            if (account == null)
             {
-                CurrentSession.LoggedInAccount = account;
-                MessageBox.Show($"Đăng nhập thành công! Xin chào {account.FullName}", "Thành công", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Email hoặc mật khẩu không chính xác. Hoặc tài khoản đã bị khóa!",
+                    "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
-                string roleName = account.Role?.Name ?? "";
+            CurrentSession.LoggedInAccount = account;
 
-                if (roleName == "Admin")
-                {
-                    AdminDashboardWindow adminWindow = new AdminDashboardWindow();
-                    adminWindow.Show();
-                }
-                else if (roleName == "ShopOwner")
-                {
-                    MessageBox.Show("Chào mừng bạn đến với giao diện Quản lý Đơn Hàng (Staff) - Đang phát triển", "Staff Dashboard", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else
-                {
-                    MainWindow main = new MainWindow();
-                    main.Show();
-                }
+            MessageBox.Show($"Đăng nhập thành công! Xin chào {account.FullName}",
+                "Thành công", MessageBoxButton.OK, MessageBoxImage.Information);
 
+            string roleName = account.Role?.Name ?? "";
+
+            if (AppRoles.IsAdmin(roleName))
+            {
+                new AdminDashboardWindow().Show();
                 this.Close();
+                return;
             }
-            else
+
+            if (AppRoles.IsSupportStaff(roleName))
             {
-                MessageBox.Show("Email hoặc mật khẩu không chính xác. Hoặc tài khoản đã bị khóa!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                new SupportOrdersWindow().Show();
+                this.Close();
+                return;
             }
+
+            if (AppRoles.IsCustomer(roleName))
+            {
+                new MainWindow().Show();
+                this.Close();
+                return;
+            }
+
+            MessageBox.Show($"Role '{roleName}' chưa được map màn hình.",
+                "Chưa hỗ trợ", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         private void txtGoToRegister_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            // Mở cửa sổ Đăng ký
             RegisterWindow registerWindow = new RegisterWindow();
             registerWindow.Show();
             this.Close();

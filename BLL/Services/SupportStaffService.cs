@@ -1,8 +1,6 @@
 ﻿using DAL.Implementations;
 using DAL.Interfaces;
 using DAL.Models;
-using System;
-using System.Collections.Generic;
 
 namespace BLL.Services
 {
@@ -15,9 +13,9 @@ namespace BLL.Services
             _orderRepository = new OrderRepository();
         }
 
-        public List<Order> GetAllOrders()
+        public List<Order> GetAllOrders(string? status = null)
         {
-            return _orderRepository.GetOrdersForSupport();
+            return _orderRepository.GetOrdersForSupport(status);
         }
 
         public Order GetOrderById(long orderId)

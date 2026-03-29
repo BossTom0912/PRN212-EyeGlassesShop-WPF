@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR
 D:\FPT\TaiLieu\PRN212\Project\Final_Project\EyeGlasses_Store\EyeGlasses_Store\WpfApp_CLassesShop\App.xaml
 11-1753822587
 
-18-1905854702
+171194570025
 238-617987494
 Admin\AdminDashboardWindow.xaml;Admin\AdminUsersWindow.xaml;CartWindow.xaml;CheckoutWindow.xaml;LoginWindow.xaml;MainWindow.xaml;OrderDetailsWindow.xaml;OrderHistoryWindow.xaml;RegisterWindow.xaml;SupportOrderDetailsWindow.xaml;SupportOrdersWindow.xaml;
 
-True
+False
 

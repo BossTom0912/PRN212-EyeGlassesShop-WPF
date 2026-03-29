@@ -304,7 +304,7 @@ public partial class GlassesShopContext : DbContext
                 .HasColumnName("sku_snapshot");
             entity.Property(e => e.SubTotal)
                 .HasPrecision(18, 2)
-                .HasColumnName("sub_total");
+                .HasColumnName("subtotal");
             entity.Property(e => e.UnitPrice)
                 .HasPrecision(18, 2)
                 .HasColumnName("unit_price");

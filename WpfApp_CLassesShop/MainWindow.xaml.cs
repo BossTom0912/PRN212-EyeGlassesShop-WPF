@@ -1,20 +1,11 @@
-﻿using BLL.Services;
-using System.Text;
+﻿using BLL.Constants;
+using BLL.Services;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WpfApp_CLassesShop.Session;
 
 namespace WpfApp_CLassesShop
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private readonly ProductService _productService;
@@ -27,74 +18,89 @@ namespace WpfApp_CLassesShop
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (Session.Session.LoggedInAccount != null)
+            var account = CurrentSession.LoggedInAccount;
+            if (account == null)
             {
-                txtWelcome.Text = $"Xin chào, {Session.Session.LoggedInAccount.FullName}! Chúc bạn mua sắm vui vẻ.";
+                MessageBox.Show("Phiên đăng nhập đã hết. Vui lòng đăng nhập lại.");
+                new LoginWindow().Show();
+                this.Close();
+                return;
             }
-            else
+
+            if (!AppRoles.IsCustomer(account.Role?.Name))
             {
-                txtWelcome.Text = "Xin chào Quý khách!";
+                MessageBox.Show("Role hiện tại không được phép vào màn hình mua hàng.");
+                new LoginWindow().Show();
+                this.Close();
+                return;
             }
+
+            txtWelcome.Text = $"Xin chào, {account.FullName}! Chúc bạn mua sắm vui vẻ.";
             LoadProductList();
         }
 
         private void LoadProductList()
         {
             var products = _productService.GetAllProducts();
-
             dgProducts.ItemsSource = products;
         }
 
         private void btnAddToCart_Click(object sender, RoutedEventArgs e)
         {
-            if (Session.Session.LoggedInAccount == null)
+            if (CurrentSession.LoggedInAccount == null)
             {
-                MessageBox.Show("Vui lòng đăng nhập để thêm hàng vào giỏ!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Vui lòng đăng nhập để thêm hàng vào giỏ!",
+                    "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             Button btn = sender as Button;
-            var selectedProduct = btn.DataContext as DAL.Models.VwProductVariantList;
+            var selectedProduct = btn?.DataContext as DAL.Models.VwProductVariantList;
 
             if (selectedProduct != null && selectedProduct.VariantId.HasValue)
             {
                 int variantId = (int)selectedProduct.VariantId.Value;
-                int accountId = (int)Session.Session.LoggedInAccount.Id;
-
-                decimal price = (decimal)selectedProduct.Price;
+                int accountId = (int)CurrentSession.LoggedInAccount.Id;
+                decimal price = selectedProduct.Price ?? 0;
 
                 try
                 {
-                    BLL.Services.CartService cartService = new BLL.Services.CartService();
-
+                    CartService cartService = new CartService();
                     cartService.AddToCart(accountId, variantId, 1, price);
 
                     MessageBox.Show($"Đã thêm '{selectedProduct.ProductName}' vào giỏ hàng thành công!",
-                                    "Thành công", MessageBoxButton.OK, MessageBoxImage.Information);
+                        "Thành công", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi thêm vào giỏ: {ex.Message}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Lỗi khi thêm vào giỏ: {ex.Message}",
+                        "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
 
         private void btnViewCart_Click(object sender, RoutedEventArgs e)
         {
-            if (Session.Session.LoggedInAccount == null)
+            if (CurrentSession.LoggedInAccount == null)
             {
-                MessageBox.Show("Bạn cần đăng nhập để xem giỏ hàng!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Bạn cần đăng nhập để xem giỏ hàng!",
+                    "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            CartWindow cartWin = new CartWindow();
-            cartWin.ShowDialog(); 
+            new CartWindow().ShowDialog();
         }
 
         private void btnOrderHistory_Click(object sender, RoutedEventArgs e)
         {
-            var historyWin = new OrderHistoryWindow();
-            historyWin.ShowDialog();
+            if (CurrentSession.LoggedInAccount == null)
+            {
+                MessageBox.Show("Bạn cần đăng nhập để xem lịch sử đơn hàng!",
+                    "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            new OrderHistoryWindow().ShowDialog();
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -107,11 +113,8 @@ namespace WpfApp_CLassesShop
 
             if (result == MessageBoxResult.Yes)
             {
-               Session.Session.LoggedInAccount = null;
-
-                LoginWindow loginWin = new LoginWindow();
-                loginWin.Show();
-
+                CurrentSession.LoggedInAccount = null;
+                new LoginWindow().Show();
                 this.Close();
             }
         }
